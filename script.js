@@ -44,7 +44,7 @@ function nextSlide() {
 initCarousel();
 
 // Auto-advance slides every 5 seconds
-setInterval(nextSlide, 5000);
+setInterval(nextSlide, 7000);
 
 // Manual dot navigation
 dots.forEach(dot => {
@@ -92,31 +92,39 @@ document.addEventListener('DOMContentLoaded', function() {
  });
 });
 
-document.querySelectorAll('.faq-question').forEach(question => {
- question.addEventListener('click', function () {
-     const answer = this.nextElementSibling;
-
-     // Alterna a classe "active" para mudar o estado da seta
-     this.classList.toggle('active');
-
-     // Alterna a exibição da resposta
-     if (answer.style.display === 'block') {
-         answer.style.display = 'none';
-     } else {
-         answer.style.display = 'block';
-     }
- });
-});
-
 document.addEventListener('DOMContentLoaded', function () {
-const faqHeader = document.querySelector('.faq-header');
-const faqContent = document.querySelector('.faq-content');
-const faqIcon = faqHeader.querySelector('i');
+    // Para os cabeçalhos principais (Treinamentos e Perguntas Frequentes)
+    const faqHeaders = document.querySelectorAll('.faq-header');
+    
+    faqHeaders.forEach(header => {
+        header.addEventListener('click', function () {
+            const faqContent = this.nextElementSibling;
+            const faqIcon = this.querySelector('i');
+            
+            faqContent.classList.toggle('active');
+            faqIcon.classList.toggle('fa-chevron-down');
+            faqIcon.classList.toggle('fa-chevron-up');
+        });
+    });
 
-faqHeader.addEventListener('click', function () {
- faqContent.classList.toggle('active');
- faqIcon.classList.toggle('fa-chevron-down');
- faqIcon.classList.toggle('fa-chevron-up');
-});
+    // Para as perguntas individuais dentro de cada seção
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+            // Toggle da classe active no botão
+            this.classList.toggle('active');
+            
+            // Encontra e toggle da exibição da resposta
+            const answer = this.nextElementSibling;
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+            } else {
+                answer.style.display = 'block';
+            }
+            
+          
+        });
+    });
 });
 

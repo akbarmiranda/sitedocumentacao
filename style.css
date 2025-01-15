@@ -67,7 +67,7 @@ nav a {
     margin-left: 20px;
     transition: color 0.3s;
     font-size: 15px;
-    font-weight: 400;
+    font-weight: 600;
 }
 
 nav a:hover {
@@ -104,6 +104,7 @@ nav a:hover {
     text-decoration: none;
     display: block;
     text-align: left;
+    font-weight: 400;
 }
 
 .dropdown-content a:hover {
@@ -298,6 +299,7 @@ header nav .dropdown > a::after {
     flex-shrink: 0;
     width: 60px;
     text-align: center;
+    align-self: center;
 }
 
 .treinamento-card img {
@@ -367,6 +369,12 @@ header nav .dropdown > a::after {
     padding-left: 30px;
 }
 
+.faq-question i {
+    transition: transform 0.3s ease;
+}
+
+
+
 .faq-header i {
     margin-left: 10px;
     transition: transform 0.3s ease;
@@ -376,9 +384,7 @@ header nav .dropdown > a::after {
     color: #1e40af; /* Cor ao passar o mouse */
 }
 
-.faq-header.active i {
-    transform: rotate(180deg); /* Rotaciona a seta ao expandir */
-}
+
 
 .faq-content {
     display: none; /* Inicialmente escondido */
@@ -428,10 +434,18 @@ header nav .dropdown > a::after {
     background-color: #f8f9fa;
 }
 
-.faq-question.active .fas {
-    transform: rotate(180deg);
+
+
+/* Transição aplicada apenas à seta */
+.faq-question .seta {
     transition: transform 0.3s ease;
 }
+
+/* Rotação apenas para a seta quando ativo */
+.faq-question.active .seta {
+    transform: rotate(180deg);
+}
+
 
 .faq-answer {
     display: none;
