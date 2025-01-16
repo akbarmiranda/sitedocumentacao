@@ -15,15 +15,20 @@ body {
 .container {
     max-width: 1320px;
     margin: 0 auto;
-    padding: 0 15px;
+
 }
 
 /* Section Headers */
-.section-header {
+/* Section Headers - Estilo base unificado para todos os headers */
+.section-header,
+.faq-header {
     margin: 60px 0;
-    padding-left: 30px;
+    padding-left: 60px;
     color: #8A8AA3;
     font-size: 18px;
+    font-weight: 600;
+    position: relative;
+    width: 100%;
 }
 
 /* Header Styles */
@@ -332,21 +337,15 @@ header nav .dropdown > a::after {
 }
 
 /* FAQ Section */
+/* Container principal - Ajuste para manter consistência */
 .section-container {
     max-width: 1320px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0;
+    width: 100%;
 }
 
 /* Mantem o estilo consistente para todos os cabeçalhos de seção */
-.section-header {
-    margin: 60px 0;
-    padding-left: 30px;
-    color: #8A8AA3;
-    font-size: 18px;
-    /* Remove qualquer alinhamento herdado */
-    text-align: left;
-}
 
 .faq-container {
     width: 80%;
@@ -366,7 +365,7 @@ header nav .dropdown > a::after {
     align-items: center; /* Centraliza verticalmente o texto e o ícone */
     cursor: pointer;
     margin: 60px 0;
-    padding-left: 30px;
+
 }
 
 .faq-question i {
@@ -580,9 +579,14 @@ footer a:hover {
     }
 
     .section-container {
-        padding: 0 15px;
+        padding: 0;
     }
 
+    .section-header,
+    .faq-header {
+        padding-left: 15px;
+        margin: 30px 0;
+    }
     /* Footer */
     footer {
         height: auto;
@@ -593,6 +597,7 @@ footer a:hover {
         flex-direction: column;
         gap: 15px;
         text-align: center;
+        padding: 0 15px;
     }
 }
 
